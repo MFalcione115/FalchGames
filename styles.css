@@ -9,8 +9,8 @@
   --bg: #06061a;
   --bg-2: #0c0a28;
   --ink: #f5f6ff;
-  --muted: rgba(236, 237, 255, .68);
-  --faint: rgba(236, 237, 255, .46);
+  --muted: rgba(236, 237, 255, .76);
+  --faint: rgba(236, 237, 255, .66);
   --link: #a9c1ff;
   --glass: rgba(255, 255, 255, .06);
   --glass-hi: rgba(255, 255, 255, .13);
@@ -43,8 +43,8 @@
     --bg: #eef0fb;
     --bg-2: #e4e7f8;
     --ink: #13142b;
-    --muted: rgba(19, 20, 43, .64);
-    --faint: rgba(19, 20, 43, .46);
+    --muted: rgba(19, 20, 43, .76);
+    --faint: rgba(19, 20, 43, .66);
     --link: #2a52d0;
     --glass: rgba(255, 255, 255, .46);
     --glass-hi: rgba(255, 255, 255, .78);
@@ -230,12 +230,7 @@ p { margin: 0 0 1em; }
 .contact h3 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
 .contact p { max-width: 30em; color: var(--muted); margin: 0 0 6px; }
 .contact a:not(.btn) { color: var(--link); }
-.signup { width: 100%; }
-.signup__row { display: flex; gap: 10px; flex-wrap: wrap; width: 100%; }
-.signup input { flex: 1 1 220px; min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--edge-soft); border-top-color: var(--edge); background: var(--glass); color: var(--ink); font: 400 1rem var(--body); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
-.signup input::placeholder { color: var(--faint); }
-.signup input:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-.signup__msg { min-height: 1.5em; font-size: .93rem; margin: 0; }
+.launch__addr { font-size: .93rem; margin: 14px 0 0 !important; }
 
 /* ---------- footer ---------- */
 .foot { padding: 0 0 clamp(18px, 3vw, 32px); color: var(--muted); }
@@ -316,6 +311,11 @@ p { margin: 0 0 1em; }
 @media (max-width: 760px) {
   .nav a:nth-child(2), .nav a:nth-child(4) { display: none; }
 }
+@media (max-width: 480px) {
+  .brand, .nav a { white-space: nowrap; }
+  .nav a { padding: 8px 10px; font-size: .88rem; }
+  .brand { font-size: 1rem; gap: 9px; }
+}
 @media (max-width: 600px) {
   .card { grid-column: span 12; }
   .actions .btn { flex: 1 1 100%; }
@@ -367,3 +367,23 @@ p { margin: 0 0 1em; }
 .gp__links li { margin: .5em 0; }
 @media (max-width: 920px) { .gp__hero { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .gp__fold { grid-template-columns: 1fr; } .gp__media--shots { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- accessibility preferences ---------- */
+/* Reduce Transparency: glass becomes a solid surface and the colour behind it is switched off. */
+@media (prefers-reduced-transparency: reduce) {
+  :root { --surface: #14143a; --surface-edge: rgba(255, 255, 255, .28); --orb: 0; }
+  body::before { display: none; }
+  .top__row, .card__btn, .seg, .gp__card, .gp__media--shots figure, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .kit__link, .principles > div, .logo--light, .postures {
+    background: var(--surface); border-color: var(--surface-edge);
+    -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none;
+  }
+}
+@media (prefers-reduced-transparency: reduce) and (prefers-color-scheme: light) {
+  :root { --surface: #ffffff; --surface-edge: rgba(19, 20, 43, .3); }
+}
+/* Increase Contrast: full-strength text and clear edges. */
+@media (prefers-contrast: more) {
+  :root { --muted: var(--ink); --faint: var(--ink); --edge-soft: var(--edge); }
+  .top__row, .card__btn, .seg, .gp__card, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .principles > div { border-color: var(--ink); }
+  a { text-decoration: underline; }
+}
