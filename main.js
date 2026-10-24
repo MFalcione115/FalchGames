@@ -20,6 +20,12 @@
     var setState = function (state, instant) {
       if (instant) duo.classList.add("no-anim");
       duo.dataset.state = state;
+      if (!instant && !reduceMotion) {            // restart the lean-and-shadow move
+        duo.classList.remove("is-moving");
+        void duo.offsetWidth;
+        duo.classList.add("is-moving");
+        setTimeout(function () { duo.classList.remove("is-moving"); }, 1800);
+      }
       if (instant) { void duo.offsetWidth; duo.classList.remove("no-anim"); }
       caption.textContent = CAPTIONS[state];
       buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.set === state)); });
