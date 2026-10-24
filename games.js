@@ -8,6 +8,9 @@
   - size:   "wide" (7 columns), "narrow" (5 columns) or "third" (4 columns)
   - status: "development" or "prototype" (add more in STATUS below)
   - folded / unfolded: optional. The "Folded / Unfolded" block in the detail view only shows when at least one is set.
+  - released: the release date once there is one. appStore: the App Store link once it is live.
+  - updates: a list of { date, title, body } shown under Recent updates on the game's page.
+  - legal:  { privacy, terms } page names if the game has its own; otherwise the site-wide ones are linked.
   - media:  an image in . Set pixel: true for pixel art so it stays crisp. Leave it out and the game gets a
             clean tile in its own color with a few plain 2D shapes (set shape: "circles", "squares", "bars", "diamonds"
             or "triangles") until it has a real screenshot.
@@ -33,28 +36,6 @@ window.SITE = {
   ],
 };
 
-/* Short dev notes for the home page. Keep 3 fresh ones; delete old ones rather than letting them go stale. */
-window.NOTES = [
-  {
-    date: "2026-10-22",
-    game: "Film Strip",
-    title: "Film Strip now makes a poster of your month",
-    body: "On the first of each month Film Strip can lay out up to twenty of your frames, spread across the whole month, with your stats underneath. It's drawn at story size, so it's ready to share.",
-  },
-  {
-    date: "2026-10-21",
-    game: "Film Strip",
-    title: "Film Strip is being laid out for every posture of the Duo",
-    body: "Open flat, the Album shows your days beside a large photo. Half-folded like a laptop, the photo stands above the crease and your controls lie flat below it, so nothing sits on the fold.",
-  },
-  {
-    date: "2026-10-10",
-    game: "Hatch & Smash",
-    title: "We removed feeding and cleaning from Hatch & Smash",
-    body: "There's no hunger, cleaning or starving in Hatch & Smash. Your kaiju simply looks a bit sadder the longer you're away, and a single visit cheers it up. Nothing you've earned is ever taken back.",
-  },
-];
-
 window.STATUS = {
   development: { label: "In development", tone: "accent" },
   prototype: { label: "Early prototype", tone: "warm" },
@@ -63,6 +44,11 @@ window.STATUS = {
 window.GAMES = [
   {
     id: "hatch-and-smash",
+    released: "",   // e.g. "November 12, 2026". Leave empty until it has a date: the page says "To be announced".
+    appStore: "",   // the App Store link. Leave empty until the game is live: the page says "Coming to the App Store".
+    updates: [
+      { date: "2026-10-10", title: "Feeding and cleaning are gone", body: "There's no hunger, cleaning or starving in Hatch & Smash. Your kaiju simply looks a bit sadder the longer you're away, and a single visit cheers it up. Nothing you've earned is ever taken back." },
+    ],
     color: "#f5b921",
     accent: "#8a5a00",
     gallery: { folded: "hatch-folded.png", unfolded: "hatch-unfolded.png" },
@@ -71,7 +57,7 @@ window.GAMES = [
     status: "development",
     genre: "Kaiju collector and idle lab",
     platforms: "iPhone Duo, iPhone, iPad",
-    size: "wide",
+    size: "third",
     media: { src: "hatch-unfolded.png", alt: "A small pink kaiju walking down an isometric city street in Hatch & Smash.", pixel: true },
     summary:
       "A pixel-art kaiju collector. Hatch monsters from eggs and build up an idle lab on the folded screen, then unfold the phone, or tap SMASH, to send a kaiju through a city and flatten as much of it as it can.",
@@ -87,6 +73,7 @@ window.GAMES = [
   },
   {
     id: "sketch-relay",
+    released: "", appStore: "", updates: [],
     color: "#ff4f6d",
     accent: "#c2203f",
     shape: "circles",
@@ -95,7 +82,7 @@ window.GAMES = [
     status: "prototype",
     genre: "Party drawing game",
     platforms: "iPhone Duo, iPhone, iPad",
-    size: "narrow",
+    size: "third",
     summary:
       "A pass-the-phone party game in the spirit of Pictionary. One player draws a secret word against the clock while everyone else shouts guesses, then the phone moves to the next person. Propped half-folded, the Duo stands like a tiny laptop.",
     features: [
@@ -108,6 +95,7 @@ window.GAMES = [
   },
   {
     id: "cold-case",
+    released: "", appStore: "", updates: [],
     color: "#3d7bff",
     accent: "#1f5fd6",
     shape: "squares",
@@ -116,7 +104,7 @@ window.GAMES = [
     status: "development",
     genre: "Detective roguelike",
     platforms: "iPhone Duo, iPhone, iPad",
-    size: "narrow",
+    size: "third",
     summary:
       "A detective roguelike where every case is procedurally generated. Work through evidence minigames to build your case, then face an interrogation boss round to close it.",
     features: [
@@ -127,6 +115,12 @@ window.GAMES = [
   },
   {
     id: "film-strip",
+    released: "", appStore: "",
+    legal: { privacy: "filmstrip-privacy.html", terms: "filmstrip-terms.html", support: "filmstrip-support.html" },
+    updates: [
+      { date: "2026-10-22", title: "Monthly recap posters", body: "On the first of each month Film Strip can lay out up to twenty of your frames, spread across the whole month, with your stats underneath. It's drawn at story size, so it's ready to share." },
+      { date: "2026-10-21", title: "Laid out for every posture of the iPhone Duo", body: "Open flat, the Album shows your days beside a large photo. Half-folded like a laptop, the photo stands above the crease and your controls lie flat below it, so nothing sits on the fold." },
+    ],
     color: "#17c3b2",
     accent: "#00746d",
     shape: "bars",
@@ -135,7 +129,7 @@ window.GAMES = [
     status: "development",
     genre: "Daily photo app",
     platforms: "iPhone Duo, iPhone, iPad",
-    size: "wide",
+    size: "third",
     summary:
       "A daily photo app. Six random 30-minute windows open between 7 AM and 11 PM, and you take one square photo in each, with a vintage film look built in. At midnight the day develops into a 35 mm strip in your Album.",
     features: [
@@ -150,6 +144,7 @@ window.GAMES = [
   },
   {
     id: "comic-manga-reader",
+    released: "", appStore: "", updates: [],
     color: "#22d67a",
     accent: "#0c7a38",
     shape: "diamonds",
@@ -158,7 +153,7 @@ window.GAMES = [
     status: "development",
     genre: "Comic and manga reader (working title)",
     platforms: "iPhone Duo, iPhone, iPad",
-    size: "wide",
+    size: "third",
     summary:
       "A reader built around the Duo's two-page spread, for comics and manga. Unfolded, the phone shows an open book. The name is a working title.",
     features: [
@@ -169,6 +164,7 @@ window.GAMES = [
   },
   {
     id: "vhs-duo-player",
+    released: "", appStore: "", updates: [],
     color: "#b26bff",
     accent: "#6d3fd1",
     shape: "triangles",
@@ -177,7 +173,7 @@ window.GAMES = [
     status: "development",
     genre: "Retro video player",
     platforms: "iPhone Duo",
-    size: "narrow",
+    size: "third",
     summary:
       "A retro video player styled after VHS tape, made for the Duo.",
     features: [

@@ -106,10 +106,8 @@
     GAMES.forEach(function (g, i) {
       var li = el("article", "card card--" + g.size);
       tint(li, g);
-      var btn = el("button", "card__btn");
-      btn.type = "button";
-      btn.setAttribute("aria-haspopup", "dialog");
-      btn.dataset.id = g.id;
+      var btn = el("a", "card__btn");
+      btn.href = "game-" + g.id + ".html";
 
       var media = el("div", "card__media");
       if (g.media) {
@@ -167,110 +165,10 @@
       });
     }
 
-    /* ---------- detail sheet ---------- */
-    var sheet = $("sheet");
-    var opener = null;
-
-    var fillMedia = function (g) {
-      var m = $("sheet-media");
-      m.classList.remove("is-folded");
-      m.classList.toggle("has-gallery", !!g.gallery);
-      m.classList.toggle("is-art", !g.gallery);
-      m.classList.toggle("has-mark", !g.media);
-      if (!g.media) {
-        m.classList.remove("is-art");
-        m.replaceChildren(shapeTile(g));
-        return;
-      }
-      var first = image({ src: g.gallery ? g.gallery.unfolded : g.media.src, alt: g.media.alt, pixel: g.media.pixel, pos: g.gallery ? "50% 50%" : g.media.pos });
-      m.replaceChildren(first);
-      if (!g.gallery) return;
-
-      var seg = el("div", "seg seg--float");
-      seg.setAttribute("role", "group");
-      seg.setAttribute("aria-label", "Show " + g.name + " folded or unfolded");
-      ["folded", "unfolded"].forEach(function (state) {
-        var b = el("button", "seg__btn", state === "folded" ? "Folded" : "Unfolded");
-        b.type = "button";
-        b.setAttribute("aria-pressed", String(state === "unfolded"));
-        b.addEventListener("click", function () {
-          first.src = g.gallery[state];
-          m.classList.toggle("is-folded", state === "folded");
-          seg.querySelectorAll(".seg__btn").forEach(function (x) {
-            x.setAttribute("aria-pressed", String(x === b));
-          });
-        });
-        seg.appendChild(b);
-      });
-      m.appendChild(seg);
-    };
-
-    var fill = function (g) {
-      tint(sheet, g);
-      fillMedia(g);
-      var st = $("sheet-status");
-      var fresh = chip(g.status); fresh.id = "sheet-status";
-      st.replaceWith(fresh);
-      $("sheet-title").textContent = g.name;
-      $("sheet-tag").textContent = g.tagline;
-      $("sheet-summary").textContent = g.summary;
-      var ul = $("sheet-features");
-      ul.replaceChildren.apply(ul, g.features.map(function (f) { return el("li", null, f); }));
-      // Only show the posture block for games that describe how they use the fold.
-      var postures = sheet.querySelector(".postures");
-      postures.style.display = (g.folded || g.unfolded) ? "" : "none";
-      $("sheet-folded").textContent = g.folded || "";
-      $("sheet-unfolded").textContent = g.unfolded || "";
-      sheet.querySelector(".postures > div:first-child").style.display = g.folded ? "" : "none";
-      sheet.querySelector(".postures > div:last-child").style.display = g.unfolded ? "" : "none";
-      $("sheet-genre").textContent = g.genre;
-      $("sheet-platforms").textContent = g.platforms;
-
-      var cta = $("sheet-cta");
-      cta.replaceChildren();
-      if (g.video) {
-        var v = el("a", "btn btn--game", "Watch the trailer");
-        v.href = g.video; v.target = "_blank"; v.rel = "noopener";
-        cta.appendChild(v);
-      }
-      var n = el("a", "btn " + (g.video ? "btn--ghost" : "btn--game"), "Get notified at launch");
-      n.href = "#signup";
-      n.addEventListener("click", function () { sheet.close(); });
-      cta.appendChild(n);
-      var p = el("a", "btn btn--ghost", "Press kit");
-      p.href = "press.html#kit-" + g.id;
-      cta.appendChild(p);
-    };
-
-    var openGame = function (id, from) {
-      var g = byId[id];
-      if (!g) return;
-      opener = from || null;
-      fill(g);
-      if (!sheet.open) sheet.showModal();
-      sheet.querySelector(".sheet__body").scrollTop = 0;
-      if (location.hash !== "#" + id) history.replaceState(null, "", "#" + id);
-    };
-
-    grid.addEventListener("click", function (e) {
-      var b = e.target.closest(".card__btn");
-      if (b) openGame(b.dataset.id, b);
-    });
-    $("sheet-close").addEventListener("click", function () { sheet.close(); });
-    // Close on the dimmed backdrop only when the press started there too, so a text-selection drag that ends outside doesn't dismiss it.
-    var pressedBackdrop = false;
-    sheet.addEventListener("pointerdown", function (e) { pressedBackdrop = e.target === sheet; });
-    sheet.addEventListener("click", function (e) { if (pressedBackdrop && e.target === sheet) sheet.close(); pressedBackdrop = false; });
-    sheet.addEventListener("close", function () {
-      if (byId[location.hash.slice(1)]) history.replaceState(null, "", location.pathname + location.search);
-      if (opener) opener.focus();
-    });
+    // Opening the sign-up from a link puts the cursor in the email box.
     window.addEventListener("hashchange", function () {
-      var id = location.hash.slice(1);
-      if (byId[id]) openGame(id);
-      if (id === "signup") setTimeout(function () { $("signup-email").focus({ preventScroll: true }); }, 400);
+      if (location.hash === "#signup" && $("signup-email")) setTimeout(function () { $("signup-email").focus({ preventScroll: true }); }, 400);
     });
-    if (byId[location.hash.slice(1)]) openGame(location.hash.slice(1));
 
     /* ---------- newsletter ---------- */
     var form = $("signup");
@@ -399,7 +297,7 @@
         dl.appendChild(d);
       });
       var page = el("a", "kit__link", "Game page");
-      page.href = "index.html#" + g.id;
+      page.href = "game-" + g.id + ".html";
       dl.appendChild(page);
       body.appendChild(dl);
 
