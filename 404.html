@@ -8,8 +8,18 @@
   <meta name="description" content="That page doesn't exist.">
   <meta name="theme-color" content="#06061a" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#eef0fb" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css">
+  <script>
+    // This page is served from any depth, so its links start at the site root. On the temporary
+    // github.io address the site lives under /FalchGames, so that prefix is added there. On
+    // falchgames.com the prefix is empty and nothing changes.
+    var SITE_BASE = /\.github\.io$/.test(location.hostname) ? '/FalchGames' : '';
+    document.write('<link rel="icon" href="' + SITE_BASE + '/favicon.svg" type="image/svg+xml">' +
+      '<link rel="stylesheet" href="' + SITE_BASE + '/styles.css">');
+  </script>
+  <noscript>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+  </noscript>
 </head>
 <body class="legal">
   <a class="skip" href="#doc">Skip to the content</a>
@@ -47,5 +57,12 @@
       </nav>
     </div>
   </footer>
+  <script>
+    if (SITE_BASE) {
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+        a.setAttribute('href', SITE_BASE + a.getAttribute('href'));
+      });
+    }
+  </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   - size:   "wide" (7 columns), "narrow" (5 columns) or "third" (4 columns)
   - status: "development" or "prototype" (add more in STATUS below)
   - folded / unfolded: optional. The "Folded / Unfolded" block in the detail view only shows when at least one is set.
-  - released: the release date once there is one. appStore: the App Store link once it is live.
+  - released: the release date once there is one, as YYYY-MM-DD (2026-11-12). appStore: the App Store link once it is live.
   - updates: a list of { date, title, body } shown under Recent updates on the game's page.
   - legal:  { privacy, terms } page names if the game has its own; otherwise the site-wide ones are linked.
   - media:  an image in . Set pixel: true for pixel art so it stays crisp. Leave it out and the game gets a
@@ -44,9 +44,12 @@ window.STATUS = {
 window.GAMES = [
   {
     id: "hatch-and-smash",
-    released: "",   // e.g. "November 12, 2026". Leave empty until it has a date: the page says "To be announced".
+    released: "",   // write it as YYYY-MM-DD, e.g. "2026-11-12". Leave empty until it has a date: the page says "To be announced".
     appStore: "",   // the App Store link. Leave empty until the game is live: the page says "Coming to the App Store".
     updates: [
+      { date: "2026-10-16", title: "Daily missions", body: "Three missions a day, one each for destroying, skill and combat, drawn from a pool of 28. Finish them for rewards, and a fresh set arrives the next day." },
+      { date: "2026-10-14", title: "Ten kaiju at launch", body: "The launch roster is ten kaiju, all of them hatching from eggs, each with its own moves and forms." },
+      { date: "2026-10-13", title: "Three cities to smash", body: "Downtown, the snowy Frostmoor and the desert Sunscar Basin. Only Downtown is open at first, and beating a city's boss opens the next." },
       { date: "2026-10-10", title: "Feeding and cleaning are gone", body: "There's no hunger, cleaning or starving in Hatch & Smash. Your kaiju simply looks a bit sadder the longer you're away, and a single visit cheers it up. Nothing you've earned is ever taken back." },
     ],
     color: "#f5b921",
@@ -95,7 +98,11 @@ window.GAMES = [
   },
   {
     id: "cold-case",
-    released: "", appStore: "", updates: [],
+    released: "", appStore: "", updates: [
+      { date: "2026-10-21", title: "Ten cases make a season", body: "A run is now a season of ten cases that ends in a finale boss. Higher Heat levels add harder rules for the whole season, and the daily case has a spoiler-free share card with streak freezes." },
+      { date: "2026-10-21", title: "A cork board for big screens", body: "On a wide display such as the unfolded Duo or an iPad, evidence goes on a cork board. Drag a clue onto a suspect to pin it, and a note hangs from a string." },
+      { date: "2026-10-21", title: "Pick your edge after every case", body: "After each case you choose one of three instincts, perks that last the rest of your run, or cash in for gold. There are 15 across three rarities, and owning three of one type switches on a bonus." },
+    ],
     color: "#3d7bff",
     accent: "#1f5fd6",
     shape: "squares",
@@ -118,6 +125,9 @@ window.GAMES = [
     released: "", appStore: "",
     legal: { privacy: "filmstrip-privacy.html", terms: "filmstrip-terms.html", support: "filmstrip-support.html" },
     updates: [
+      { date: "2026-10-22", title: "Load your film each morning", body: "Each day starts by choosing a film, with a sample for each stock: Noir 400, Golden Hour and Cinema Night. Your choice locks in with your first photo." },
+      { date: "2026-10-22", title: "One emoji per frame", body: "Add a single emoji caption to any frame. It shows as a badge on the photo, is shared with friends and can be searched in your Album." },
+      { date: "2026-10-22", title: "A widget for your next frame", body: "Home Screen and Lock Screen widgets count down to the next open frame, and Shortcuts can take a photo or check on your day." },
       { date: "2026-10-22", title: "Monthly recap posters", body: "On the first of each month Film Strip can lay out up to twenty of your frames, spread across the whole month, with your stats underneath. It's drawn at story size, so it's ready to share." },
       { date: "2026-10-21", title: "Laid out for every posture of the iPhone Duo", body: "Open flat, the Album shows your days beside a large photo. Half-folded like a laptop, the photo stands above the crease and your controls lie flat below it, so nothing sits on the fold." },
     ],
