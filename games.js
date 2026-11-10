@@ -80,6 +80,7 @@ window.STUDIO = {
     ["Legal name", "Falcione Productions, LLC"],
     ["Business type", "Single-member limited liability company"],
     ["Registered in", "Pennsylvania"],
+    ["Trade name", "Falch Games, a fictitious name registered in Pennsylvania"],
     ["Game studio", "Falch Games"],
     ["Website", "www.falchgames.com"],
     ["Contact", "support@falchgames.com"],
