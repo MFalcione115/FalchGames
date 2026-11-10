@@ -86,7 +86,7 @@ p { margin: 0 0 1em; }
 .skip:focus { left: 10px; }
 
 /* ---------- the glass itself ---------- */
-.top__row, .card__btn, .seg, .gp__card, .gp__media--shots figure, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .kit__link, .principles > div, .logo--light, .postures {
+.top__row, .card__btn, .seg, .gp__card, .gp__media--shots figure, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .kit__link, .principles > div, .logo--light, .postures, .pillar, .panel, .mailcard, .org__level {
   background: linear-gradient(150deg, var(--glass-hi), var(--glass));
   border: 1px solid var(--edge-soft);
   border-top-color: var(--edge);
@@ -115,6 +115,8 @@ p { margin: 0 0 1em; }
 .nav { display: flex; gap: 2px; }
 .nav a { text-decoration: none; font-weight: 500; font-size: .93rem; color: var(--muted); padding: 9px 15px; border-radius: 999px; transition: background-color .2s, color .2s; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); background: var(--glass-hi); }
+.top__mail { font: 600 .88rem/1 var(--body); text-decoration: none; padding: 11px 17px; border-radius: 999px; background: var(--btn-bg); color: var(--btn-ink); white-space: nowrap; transition: opacity .2s; }
+.top__mail:hover { opacity: .88; }
 
 /* ---------- buttons ---------- */
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -248,11 +250,16 @@ p { margin: 0 0 1em; }
 
 /* ---------- footer ---------- */
 .foot { padding: 0 0 clamp(18px, 3vw, 32px); color: var(--muted); }
-.foot__row { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; align-items: center; padding: 18px 26px; border-radius: 28px; font-size: .9rem; }
+.foot__row { display: block; padding: clamp(22px, 3vw, 34px) clamp(22px, 3.4vw, 40px); border-radius: 32px; font-size: .94rem; }
+.foot__grid { display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.4fr; gap: 28px clamp(20px, 3.4vw, 44px); width: 100%; }
 .foot p { margin: 0; }
-.foot nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.foot__about .brand { margin-bottom: 12px; color: var(--ink); }
+.foot__about p { max-width: 30em; color: var(--faint); font-size: .9rem; }
+.foot nav, .foot__contact { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; }
+.foot__h { font: 650 .78rem/1 var(--display); text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin: 0 0 4px; }
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--ink); text-decoration: underline; }
+.foot__mail { color: var(--ink); font-weight: 650; word-break: break-word; }
 
 /* ---------- press kit ---------- */
 .band--page .press__intro { padding-block: clamp(48px, 7vw, 92px) clamp(40px, 6vw, 80px); }
@@ -323,7 +330,7 @@ p { margin: 0 0 1em; }
   .kit__thumb { aspect-ratio: 2 / 1; min-height: 0; }
 }
 @media (max-width: 760px) {
-  .nav a:nth-child(2), .nav a:nth-child(4) { display: none; }
+  .nav a:nth-child(3), .nav a:nth-child(4) { display: none; }
 }
 @media (max-width: 480px) {
   .brand, .nav a { white-space: nowrap; }
@@ -387,7 +394,7 @@ p { margin: 0 0 1em; }
 @media (prefers-reduced-transparency: reduce) {
   :root { --surface: #14143a; --surface-edge: rgba(255, 255, 255, .28); --orb: 0; }
   body::before { display: none; }
-  .top__row, .card__btn, .seg, .gp__card, .gp__media--shots figure, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .kit__link, .principles > div, .logo--light, .postures {
+  .top__row, .card__btn, .seg, .gp__card, .gp__media--shots figure, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .kit__link, .principles > div, .logo--light, .postures, .pillar, .panel, .mailcard, .org__level {
     background: var(--surface); border-color: var(--surface-edge);
     -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none;
   }
@@ -398,6 +405,113 @@ p { margin: 0 0 1em; }
 /* Increase Contrast: full-strength text and clear edges. */
 @media (prefers-contrast: more) {
   :root { --muted: var(--ink); --faint: var(--ink); --edge-soft: var(--edge); }
-  .top__row, .card__btn, .seg, .gp__card, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .principles > div { border-color: var(--ink); }
+  .top__row, .card__btn, .seg, .gp__card, .fold__side, .facts div, .contact__col, .foot__row, .copy, .kit, .doc, .doc__card, .btn--outline, .btn--ghost, .copy__btn, .principles > div, .pillar, .panel, .mailcard, .org__level { border-color: var(--ink); }
   a { text-decoration: underline; }
+}
+
+/* =====================================================================
+   Overhaul: devices, badges, studio and contact pages
+   ===================================================================== */
+
+/* ---------- hero extras ---------- */
+.hero__mail { margin: 22px 0 0; font-size: .95rem; color: var(--faint); }
+.hero__mail a { color: var(--link); font-weight: 600; }
+.hero h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.04; letter-spacing: -.04em; margin-bottom: .5em; text-wrap: balance; }
+.hero--duo { padding-block: clamp(24px, 4vw, 56px) clamp(40px, 6vw, 80px); }
+.section__more { margin-top: clamp(20px, 3vw, 32px); }
+
+/* ---------- devices, drawn to scale ----------
+   Each figure is set to a device's real proportions (--w and --h in mm), so an iPhone, an iPad and an iPhone Duo
+   sit next to each other at their true relative sizes. Screens show real screenshots; with none, a plain brand screen. */
+.hero__devices { margin: 0; }
+.devs { display: grid; gap: clamp(10px, 2.4%, 30px); align-items: end; width: 100%; }
+.dev { margin: 0; min-width: 0; container-type: inline-size; }
+.dev__body { position: relative; aspect-ratio: var(--w) / var(--h); background: #05050d; border-radius: 12.5cqw; padding: 3.4cqw;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .26), inset 0 0 0 .9cqw #16161f, 0 34px 44px -22px rgba(0, 0, 0, .6); }
+.dev__screen { position: relative; width: 100%; height: 100%; border-radius: 9.4cqw; overflow: hidden; background: #0b0c10; }
+.dev__screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.dev__screen img.px { image-rendering: pixelated; }
+.dev__brand { position: absolute; inset: 0; display: grid; place-items: center;
+  background: radial-gradient(90% 70% at 20% 0%, color-mix(in srgb, var(--c7) 55%, transparent), transparent 70%), radial-gradient(80% 60% at 90% 100%, color-mix(in srgb, var(--c3) 50%, transparent), transparent 70%), #0d0b2b; }
+.dev__brand .mark { height: 18cqw; gap: 1cqw; }
+.dev__brand .mark__l { width: 10cqw; border-radius: 3cqw 0 0 3cqw; background: #fff; }
+.dev__brand .mark__seam { width: 2.8cqw; border-radius: 1cqw; }
+.dev__brand .mark__r { width: 10cqw; border: 2cqw solid #fff; border-left: 0; border-radius: 0 3cqw 3cqw 0; }
+.dev--ipad .dev__body { border-radius: 4.6cqw; padding: 3.4cqw; }
+.dev--ipad .dev__screen { border-radius: 2.2cqw; }
+.dev--ipad .dev__brand .mark { height: 12cqw; }
+.dev--ipad .dev__brand .mark__l { width: 7cqw; border-radius: 2cqw 0 0 2cqw; }
+.dev--ipad .dev__brand .mark__seam { width: 2cqw; }
+.dev--ipad .dev__brand .mark__r { width: 7cqw; border-width: 1.4cqw; border-radius: 0 2cqw 2cqw 0; }
+.dev--duo-unfolded .dev__body { border-radius: 4.4cqw; padding: 2.4cqw; }
+.dev--duo-unfolded .dev__screen { border-radius: 3cqw; }
+.dev--duo-folded .dev__body { border-radius: 8.6cqw; padding: 3cqw; }
+.dev--duo-folded .dev__screen { border-radius: 6cqw; }
+.dev__island { position: absolute; top: 2.6cqw; left: 50%; width: 27cqw; height: 7.6cqw; transform: translateX(-50%); border-radius: 4cqw; background: #000; z-index: 2; }
+.dev__crease { position: absolute; top: 0; bottom: 0; left: 50%; width: .7cqw; transform: translateX(-50%); background: linear-gradient(90deg, rgba(0, 0, 0, .55), rgba(255, 255, 255, .12), rgba(0, 0, 0, .55)); pointer-events: none; z-index: 2; }
+.dev figcaption { padding-top: 12px; text-align: center; font-size: .82rem; font-weight: 500; color: var(--faint); }
+
+/* ---------- device badges ---------- */
+.badges { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 1.4em; padding: 0; }
+.badge { padding: 6px 13px; border-radius: 999px; font: 600 .82rem/1.2 var(--body); background: var(--glass-hi); border: 1px solid var(--edge-soft); color: var(--ink); }
+.badges--sm { margin: 0; gap: 6px; }
+.badges--sm .badge { padding: 4px 10px; font-size: .75rem; font-weight: 500; color: var(--muted); }
+.card__row { gap: 10px; }
+
+/* ---------- game pages: terms, privacy and support buttons, device pictures ---------- */
+.gp__legal { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.gp__legal .btn { min-height: 42px; padding: 0 18px; font-size: .9rem; }
+.gp__media--devices { aspect-ratio: auto; background: none; box-shadow: none; overflow: visible; border-radius: 0; }
+
+/* ---------- page intros ---------- */
+.press__intro h1 { margin-bottom: .3em; }
+
+/* ---------- studio and contact ---------- */
+.pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); }
+.pillars--n2, .pillars--n4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pillar { padding: clamp(22px, 2.6vw, 30px); border-radius: 28px; }
+.pillar h3 { font-size: 1.2rem; line-height: 1.2; margin-bottom: 8px; }
+.pillar p, .plain { color: var(--muted); margin: 0; }
+.plain { padding-left: 1.2em; margin-top: 4px; }
+.plain li { margin: .5em 0; }
+.plain a { color: var(--link); }
+.panel { padding: clamp(24px, 3.6vw, 46px); border-radius: 32px; max-width: 880px; }
+.panel--wide { max-width: none; }
+.panel p { color: var(--muted); font-size: 1.04rem; }
+.panel p strong { color: var(--ink); }
+.panel p:last-child { margin-bottom: 0; }
+.panel .actions { margin-top: 22px; }
+.org { list-style: none; margin: 0 0 clamp(12px, 1.6vw, 20px); padding: 0; display: grid; gap: 12px; }
+.org__level { padding: 20px 26px; border-radius: 24px; position: relative; }
+.org__level:nth-child(2) { margin-left: clamp(14px, 4vw, 52px); }
+.org__level:nth-child(3) { margin-left: clamp(28px, 8vw, 104px); }
+.org__level + .org__level::before { content: ""; position: absolute; left: -18px; top: -12px; width: 14px; height: calc(50% + 12px); border-left: 2px solid var(--edge); border-bottom: 2px solid var(--edge); border-radius: 0 0 0 10px; opacity: .6; }
+.org__level h3 { font-size: 1.15rem; margin-bottom: 4px; }
+.org__level p { margin: 0; color: var(--muted); }
+.mailcard { padding: clamp(28px, 5vw, 56px); border-radius: 36px; display: grid; gap: 14px; margin-bottom: clamp(12px, 1.6vw, 20px); }
+.mailcard__label { margin: 0; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--faint); }
+.mailcard__addr { font: 700 clamp(1.5rem, 4.4vw, 2.9rem)/1.1 var(--display); letter-spacing: -.03em; color: var(--ink); text-decoration: none; word-break: break-word; }
+.mailcard__addr:hover { text-decoration: underline; text-underline-offset: 6px; }
+.contact .mailcard__addr { font-size: clamp(1.3rem, 2.6vw, 1.9rem); margin-bottom: 6px; }
+.facts--studio { margin: 0; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+
+@media (max-width: 1040px) { .top__mail { display: none; } }
+@media (max-width: 920px) {
+  .pillars, .pillars--n2, .pillars--n4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foot__grid { grid-template-columns: 1fr 1fr; }
+  .foot__about { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .pillars, .pillars--n2, .pillars--n4 { grid-template-columns: 1fr; }
+  .foot__grid { grid-template-columns: 1fr 1fr; }
+  .gp__legal .btn { flex: 1 1 calc(50% - 10px); }
+  .dev figcaption { font-size: .7rem; }
+}
+
+/* phones: keep the header on one line and the email address whole */
+@media (max-width: 480px) {
+  .nav a:nth-child(2) { display: none; }
+}
+@media (max-width: 600px) {
+  .foot__contact { grid-column: 1 / -1; }
 }

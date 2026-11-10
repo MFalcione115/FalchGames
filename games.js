@@ -41,6 +41,55 @@ window.STATUS = {
   prototype: { label: "Early prototype", tone: "warm" },
 };
 
+/*
+  The Studio page. Every statement here comes from the project documents or from facts the owner has confirmed.
+  Leave something out rather than guess. Things still to add when the owner provides them: when the company was
+  formed, which city it is based in, and the goals in the owner's own words.
+*/
+window.STUDIO = {
+  intro: "Falch Games is the game studio of Falcione Productions, LLC. We make games for iPhone, iPad and iPhone Duo, and we publish every one of them under one name and one set of standards.",
+  goals: [
+    { title: "Games that feel at home on Apple devices", text: "Every game is designed for the screens it runs on: a quick, one-handed layout on iPhone, more room on iPad, and two screens working together on the iPhone Duo." },
+    { title: "Fair to the people who play", text: "Games are free to download. Optional purchases sell time, convenience and style, never progress or exclusive power, and being away from a game never takes anything from you." },
+    { title: "Made with care, from scratch", text: "We make our own code, art and audio, so each game has a consistent look, a small download and nothing borrowed that we cannot explain." },
+    { title: "Honest about what exists", text: "A page says In development or Early prototype until a game is ready, and we do not show screenshots or features that are not real." },
+  ],
+  background: [
+    "Falcione Productions, LLC is a limited liability company registered in the Commonwealth of Pennsylvania. It owns and operates this website and publishes games under the Falch Games name.",
+    "The studio is currently developing six games, from a kaiju collector and a detective roguelike to a daily photo app, a comic and manga reader and a retro video player. Each game's page lists the devices it supports and what stage it has reached.",
+  ],
+  organization: {
+    intro: "The company is small and its structure is simple, so it is clear who is responsible for what.",
+    levels: [
+      { name: "Falcione Productions, LLC", text: "The company. A single-member limited liability company registered in Pennsylvania. It owns and operates this website and the apps." },
+      { name: "Falch Games", text: "The game studio. This is the name players see on the App Store and on this website." },
+      { name: "Each game", text: "Every game has its own written specification, automated tests, release checklist, privacy policy and support page." },
+    ],
+    responsibility: "Because the company has a single member, one person is accountable for product decisions, support replies, privacy requests and legal compliance. Everything sent to the support address is read by that person.",
+  },
+  howWeWork: [
+    { title: "Specification first", text: "Each game starts as a written specification: its rules, its screens for every device size, its accessibility needs and what it will and will not do." },
+    { title: "Tested rules and layouts", text: "Game rules and economies are covered by automated tests, and layouts are checked in Apple's simulators, including the iPhone Duo's folded and unfolded displays." },
+    { title: "A release checklist", text: "Before a game is submitted we work through a checklist: store listing, age rating, privacy details, purchases, and the support and legal links." },
+    { title: "Accessibility", text: "We design for Reduce Motion, Dynamic Type and VoiceOver, and treat accessibility as part of launching a game." },
+    { title: "Privacy", text: "Each app has a privacy policy that says what it collects and why. This website has no accounts, no analytics and no advertising." },
+    { title: "One place for help", text: "support@falchgames.com is the single address for every game, for purchases, privacy requests, press and partnerships." },
+  ],
+  intent: [
+    "Our intent is to build a small catalogue of well-made games that people can trust: clear about what they cost, clear about what they collect, and clear about who makes them.",
+    "This website is the public home of Falcione Productions, LLC. The Terms of Service, the Privacy Policy and Support are linked from every page and from every game.",
+  ],
+  details: [
+    ["Legal name", "Falcione Productions, LLC"],
+    ["Business type", "Single-member limited liability company"],
+    ["Registered in", "Pennsylvania"],
+    ["Game studio", "Falch Games"],
+    ["Website", "falchgames.com"],
+    ["Contact", "support@falchgames.com"],
+    ["Devices", "iPhone, iPad and iPhone Duo"],
+  ],
+};
+
 window.GAMES = [
   {
     id: "hatch-and-smash",

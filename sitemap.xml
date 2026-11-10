@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://falchgames.com/</loc></url>
-  <url><loc>https://falchgames.com/press.html</loc></url>
-  <url><loc>https://falchgames.com/support.html</loc></url>
-  <url><loc>https://falchgames.com/privacy.html</loc></url>
-  <url><loc>https://falchgames.com/terms.html</loc></url>
-  <url><loc>https://falchgames.com/game-hatch-and-smash.html</loc></url>
-  <url><loc>https://falchgames.com/game-sketch-relay.html</loc></url>
-  <url><loc>https://falchgames.com/game-cold-case.html</loc></url>
-  <url><loc>https://falchgames.com/game-film-strip.html</loc></url>
-  <url><loc>https://falchgames.com/game-comic-manga-reader.html</loc></url>
-  <url><loc>https://falchgames.com/game-vhs-duo-player.html</loc></url>
-  <url><loc>https://falchgames.com/filmstrip-privacy.html</loc></url>
-  <url><loc>https://falchgames.com/filmstrip-terms.html</loc></url>
-  <url><loc>https://falchgames.com/filmstrip-support.html</loc></url>
+  <url><loc>https://falchgames.com/games</loc></url>
+  <url><loc>https://falchgames.com/studio</loc></url>
+  <url><loc>https://falchgames.com/contact</loc></url>
+  <url><loc>https://falchgames.com/press</loc></url>
+  <url><loc>https://falchgames.com/support</loc></url>
+  <url><loc>https://falchgames.com/privacy</loc></url>
+  <url><loc>https://falchgames.com/terms</loc></url>
+  <url><loc>https://falchgames.com/game-hatch-and-smash</loc></url>
+  <url><loc>https://falchgames.com/game-sketch-relay</loc></url>
+  <url><loc>https://falchgames.com/game-cold-case</loc></url>
+  <url><loc>https://falchgames.com/game-film-strip</loc></url>
+  <url><loc>https://falchgames.com/game-comic-manga-reader</loc></url>
+  <url><loc>https://falchgames.com/game-vhs-duo-player</loc></url>
+  <url><loc>https://falchgames.com/filmstrip-privacy</loc></url>
+  <url><loc>https://falchgames.com/filmstrip-terms</loc></url>
+  <url><loc>https://falchgames.com/filmstrip-support</loc></url>
 </urlset>
