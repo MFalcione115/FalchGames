@@ -24,7 +24,7 @@ window.SITE = {
   state: "Pennsylvania",
   // The one contact address used everywhere on the site.
   email: "support@falchgames.com",
-  domain: "falchgames.com",
+  domain: "www.falchgames.com",
   year: 2026,
   // Social links appear in the footer and press kit once you add a url.
   social: [
@@ -81,7 +81,7 @@ window.STUDIO = {
     ["Business type", "Single-member limited liability company"],
     ["Registered in", "Pennsylvania"],
     ["Game studio", "Falch Games"],
-    ["Website", "falchgames.com"],
+    ["Website", "www.falchgames.com"],
     ["Contact", "support@falchgames.com"],
     ["Devices", "iPhone, iPad and iPhone Duo"],
   ],
