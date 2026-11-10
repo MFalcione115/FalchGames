@@ -10,7 +10,7 @@
   - folded / unfolded: optional. The "Folded / Unfolded" block in the detail view only shows when at least one is set.
   - released: the release date once there is one, as YYYY-MM-DD (2026-11-12). appStore: the App Store link once it is live.
   - updates: a list of { date, title, body } shown under Recent updates on the game's page.
-  - legal:  { privacy, terms } page names if the game has its own; otherwise the site-wide ones are linked.
+  - privacy: each game's privacy policy is written from window.PRIVACY at the bottom of this file (privacy-<id>.html).
   - media:  an image in . Set pixel: true for pixel art so it stays crisp. Leave it out and the game gets a
             clean tile in its own color with a few plain 2D shapes (set shape: "circles", "squares", "bars", "diamonds"
             or "triangles") until it has a real screenshot.
@@ -225,3 +225,95 @@ window.GAMES = [
     unfolded: "The piano roll comes first, with Sound, FX, Arp and Loop windows opening beside it.",
   },
 ];
+
+/*
+  Per-game privacy policies (written into privacy-<id>.html by the build).
+  Drafted from each game's own project documents. Every statement must stay true to what the app does:
+  re-check these against the app, its privacy manifest and its App Store privacy answers before each release.
+  Each entry: short (the short version), sections [{ h, p: [paragraphs], ul: [bullets] }].
+*/
+window.PRIVACY = {
+  "hatch-and-smash": {
+    short: "Hatch & Smash has no account system and no servers of ours, and we do not sell your data. The only third party that collects data for its own purposes is Google AdMob, which runs the optional rewarded videos.",
+    sections: [
+      { h: "What stays on your device", p: ["Your game progress (coins, gems, Kaiju, eggs, missions, settings and purchase records) is saved on your device. We never receive it."] },
+      { h: "iCloud backup", p: ["If you are signed in to iCloud and leave iCloud backup switched on in the game, a compact copy of your progress is stored in your own iCloud account using Apple's iCloud key-value storage, so you can restore it on a new device. We cannot see or access it. You can turn it off in the game's settings and delete it in iOS Settings under your name, iCloud, Manage Storage."] },
+      { h: "Game Center", p: ["If you are signed in to Game Center, the game submits your scores and statistics to Apple's Game Center leaderboards and shows your Game Center alias and avatar in the game. This is handled by Apple under Apple's privacy policy, and we do not receive your name or contact details. You can sign out of Game Center in iOS Settings."] },
+      { h: "Purchases", p: ["Gems, a starter bundle, an Auto-Tapper and a season pass can be bought through the App Store. Apple processes the payment and we never see your card or Apple Account details. The game receives a verified record that a purchase was made so it can deliver your items. The odds of random eggs are shown before you buy."] },
+      { h: "Notifications", p: ["The game can send local notifications, for example when an egg is ready or your energy is full. They are scheduled on your device, not sent from a server, and you can turn them off in the game or in iOS Settings."] },
+      { h: "Advertising (Google AdMob)", p: [
+        "The game offers optional rewarded videos, shown only when you choose to watch one. They are provided by Google AdMob. When ads are loaded or shown, Google and its partners may collect and use data such as your device's advertising identifier (only if you allow tracking), IP address, approximate location, device and app information, ad interactions and diagnostics, to deliver, measure and personalise ads and to prevent fraud. This can include tracking across apps and websites owned by other companies.",
+        "Where Google requires it, the game shows Google's consent form before any ads are used, and you can change your choice in the game's ad privacy choices. On iOS you are asked whether the app may track you. If you say no, ads can still appear but are less personalised, and the game plays and rewards exactly the same. You can change this in iOS Settings under Privacy & Security, Tracking."] },
+      { h: "Where the game is available", p: ["Hatch & Smash is planned for release in the United States only, and this policy is written for US law."] },
+      { h: "How long we keep data", p: ["We do not keep data about you. Data on your device stays until you delete the game. iCloud backups stay until you delete them in iOS Settings. Apple and Google keep the data they handle under their own policies."] },
+      { h: "Children", p: ["Hatch & Smash is not directed at children under 13, and we do not knowingly collect personal information from them."] },
+    ],
+  },
+
+  "cold-case": {
+    short: "Cold Case does not collect, store on a server, share or sell any personal information. It has no accounts, no advertising, no analytics, no tracking and no in-app purchases, and it needs no internet connection.",
+    sections: [
+      { h: "What the app stores on your device", p: ["To let you continue playing, the app saves the following only on your device:"], ul: [
+        "Your game progress: rank and experience, seasons won, banked gold, tools you bought, unlocked difficulty and themes, daily case results and streak, and which tips you have seen.",
+        "Your settings: theme, sound, music, haptics and accessibility choices.",
+        "A saved run in progress, so you can leave and come back.",
+        "How long your recent cases took, a number shown in the app's settings and never sent anywhere."],
+        after: "This data stays in the app's private storage and is not sent to us or to anyone else. If you back up your device with iCloud or your computer, Apple may include this app data in that backup under Apple's own privacy terms. Deleting the app deletes this data." },
+      { h: "What the app does not do", ul: [
+        "It does not connect to the internet.",
+        "It does not ask for or use your name, email, contacts, photos, microphone, camera, location or advertising identifier.",
+        "It does not use third-party code, analytics, crash reporters or advertising networks.",
+        "It does not track you across other companies' apps or websites."] },
+      { h: "Sharing your daily result", p: ["The daily case has a Share Result button. When you tap it, iOS shows its standard share sheet with a short text result (day number, grade, confidence and streak). Where that text goes is decided by you and the app you choose to share with. We never receive it."] },
+      { h: "Children", p: ["Cold Case is not directed at children under 13 and collects no information from anyone, including children."] },
+    ],
+  },
+
+  "gamefold": {
+    short: "GameFold collects no data and makes no network connections. It has no accounts, ads, analytics, tracking or in-app purchases.",
+    sections: [
+      { h: "What stays on your device", p: ["GameFold keeps your chip balance and your appearance choice on your device, in the app's own storage. We never receive them. Deleting the app deletes them."] },
+      { h: "What the app does not do", ul: [
+        "It has no accounts or sign-in.",
+        "It does not connect to the internet or load anything from a server.",
+        "It has no ads, analytics or tracking tools, and it reads no advertising identifier.",
+        "It has no in-app purchases and no way to pay for anything.",
+        "Its sound and music are generated on your device. It does not record audio."] },
+      { h: "Virtual chips", p: ["The casino-style games use virtual play-money chips only. Chips cannot be bought, have no cash value and cannot be redeemed for anything. Because these games simulate gambling, GameFold is expected to be rated 18+."] },
+      { h: "Children", p: ["GameFold is not made for children, is expected to carry an 18+ age rating, and collects no information from anyone."] },
+    ],
+  },
+
+  "void-chain": {
+    short: "Void Chain has no account system and no servers of ours, and we do not sell your data. The ads in the game are provided by Google, which collects some data to show and measure them.",
+    sections: [
+      { h: "What stays on your device", p: ["Your progress (your archive, relic collection, best builds, logbook, starlight and settings) is saved on your device. A home-screen widget reads a few details, such as the daily rule, on your device only. We never receive any of it."] },
+      { h: "iCloud sync", p: ["If you are signed in to iCloud, the game syncs your progress between your devices using Apple's iCloud key-value storage, in your own iCloud account. We cannot see or access it. You can turn sync off in the game and delete the data in iOS Settings under your name, iCloud, Manage Storage."] },
+      { h: "Game Center", p: ["If you are signed in to Game Center, the game submits your scores and achievements to Apple's Game Center leaderboards. This is handled by Apple under Apple's privacy policy, and we do not receive your name or contact details."] },
+      { h: "Advertising (Google Mobile Ads)", p: [
+        "Void Chain is free to play and shows ads between runs, plus rewarded ads that you always choose to watch. The ads are provided by Google. When ads are loaded or shown, Google may collect data such as your device identifier, advertising data and how you interact with ads, to deliver and measure ads and to prevent fraud. We do not link that data to you.",
+        "Where the law requires it, the game shows Google's consent form before any ads are used. As designed, the game does not ask to track you across other companies' apps and websites. If that changes, we will update this policy first."] },
+      { h: "Purchases", p: ["A one-time purchase removes the between-run ads. It is made through the App Store: Apple processes the payment and we never see your card or Apple Account details."] },
+      { h: "How long we keep data", p: ["We do not keep data about you. Data on your device stays until you delete the game. iCloud data stays until you delete it. Apple and Google keep the data they handle under their own policies."] },
+      { h: "Children", p: ["Void Chain is not directed at children under 13, and we do not knowingly collect personal information from them."] },
+    ],
+  },
+
+  "wavefold": {
+    short: "Wavefold does not collect, store on a server, share or sell any personal information. It has no accounts, no ads, no analytics and no tracking.",
+    sections: [
+      { h: "What stays on your device", p: ["Your projects, patterns, voice recordings, sounds, effects settings and options are saved only on your device, in the app's own storage. We cannot see them. If you delete the app, they are deleted with it, unless you exported them first."] },
+      { h: "MIDI and Bluetooth", p: ["If you connect a MIDI keyboard, controller or another app, Wavefold exchanges MIDI notes and clock signals with it on your device. If you connect a Bluetooth MIDI device, the app uses Bluetooth only for that. None of this is sent to us or anyone else."] },
+      { h: "iCloud", p: ["If you are signed in to iCloud, Wavefold keeps your projects and voice recordings in your own iCloud Drive, so they are on all your devices. They are stored in your private iCloud account, under Apple's terms and privacy policy, and we cannot see or access them. You can turn this off in the app's settings, and your projects then stay on the device only."] },
+      { h: "What we do not collect", ul: [
+        "No account or sign-in is needed, and none exists.",
+        "No analytics, advertising or tracking tools are used, and no advertising identifier is read.",
+        "The app does not use your camera, contacts, photos or location.",
+        "The microphone is used only while you record onto a voice track, and only after you allow it. The sound is saved on your device as part of your project and is never sent to us or anyone else. You can turn the permission off at any time in iOS Settings.",
+        "The app does not connect to any server run by us."] },
+      { h: "Files you export", p: ["When you export audio or MIDI, the file is made on your device and handed to the iOS share sheet. Where it goes next (Files, AirDrop, Messages or another app) is your choice and is governed by that app's own policy."] },
+      { h: "Wavefold Pro subscriptions", p: ["Subscriptions are sold and managed by Apple through the App Store. Apple handles your payment and billing details, and we never receive your name, card or Apple Account details. The app only asks the App Store whether a subscription is active on your Apple Account."] },
+      { h: "Children", p: ["Wavefold collects no personal information from anyone, including children."] },
+    ],
+  },
+};

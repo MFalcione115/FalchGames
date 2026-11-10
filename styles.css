@@ -522,3 +522,5 @@ p { margin: 0 0 1em; }
 /* a row of two larger cards (the last two games) */
 .card--half { grid-column: span 6; }
 @media (max-width: 600px) { .card--half { grid-column: span 12; } }
+
+.doc h3 { font-size: 1.05rem; letter-spacing: -.01em; margin: 1.5em 0 .3em; }
