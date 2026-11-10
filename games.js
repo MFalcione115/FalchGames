@@ -110,7 +110,7 @@ window.GAMES = [
     genre: "Kaiju collector and idle lab",
     platforms: "iPhone Duo, iPhone, iPad",
     size: "third",
-    media: { src: "hatch-unfolded.png", alt: "A small pink kaiju walking down an isometric city street in Hatch & Smash.", pixel: true },
+    media: { src: "hatch-unfolded.png", alt: "A giant armored kaiju, Ferrox, smashing through an isometric city at dusk in Hatch & Smash.", pixel: true },
     summary:
       "A pixel-art kaiju collector. Hatch monsters from eggs and build up an idle lab on the folded screen, then unfold the phone, or tap SMASH, to send a kaiju through a city and flatten as much of it as it can.",
     features: [
@@ -125,6 +125,7 @@ window.GAMES = [
   },
   {
     id: "cold-case",
+    pixelArt: true,
     released: "", appStore: "", updates: [
       { date: "2026-10-21", title: "Ten cases make a season", body: "A run is now a season of ten cases that ends in a finale boss. Higher Heat levels add harder rules for the whole season, and the daily case has a spoiler-free share card with streak freezes." },
       { date: "2026-10-21", title: "A cork board for big screens", body: "On a wide display such as the unfolded Duo or an iPad, evidence goes on a cork board. Drag a clue onto a suspect to pin it, and a note hangs from a string." },

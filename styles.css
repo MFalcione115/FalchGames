@@ -162,7 +162,7 @@ p { margin: 0 0 1em; }
 .duo__screen--right { left: 0; right: 4.49%; border-radius: 0 7.7cqh 7.7cqh 0; background-position: 100% 0; }
 /* cover display, on the back of the turning half: 2.6 mm side bezel, 2.85 mm top and bottom, exactly the cover's 1398 x 2034 shape.
    Spine side 8 pt corners, outer side 59 pt corners. */
-.duo__cover { left: 3.18%; right: 3.18%; top: 2.41%; bottom: 2.41%; border-radius: 1.1cqh 8.3cqh 8.3cqh 1.1cqh; background-image: url("hatch-folded.png"); background-size: 100% 100%; transform: rotateY(180deg) translateZ(calc(var(--step) * 6)); }
+.duo__cover { left: 3.18%; right: 3.18%; top: 2.41%; bottom: 2.41%; border-radius: 1.1cqh 8.3cqh 8.3cqh 1.1cqh; background-image: url("hatch-folded.png"); background-size: cover; background-position: center; transform: rotateY(180deg) translateZ(calc(var(--step) * 6)); }
 .duo__shade { position: absolute; inset: 0; background: linear-gradient(270deg, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0) 75%); opacity: 0; pointer-events: none; transition: opacity 1.5s; border-radius: inherit; }
 .duo[data-state="unfolded"] /* the move: the body leans toward you and back, and the turning half throws a shadow across the open display */
 .duo__cast { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, .78), rgba(0, 0, 0, 0) 70%); opacity: 0; pointer-events: none; border-radius: inherit; }
