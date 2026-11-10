@@ -13,11 +13,16 @@
     // github.io address the site lives under /FalchGames, so that prefix is added there. On
     // falchgames.com the prefix is empty and nothing changes.
     var SITE_BASE = /\.github\.io$/.test(location.hostname) ? '/FalchGames' : '';
-    document.write('<link rel="icon" href="' + SITE_BASE + '/favicon.svg" type="image/svg+xml">' +
+    document.write('<link rel="icon" href="' + SITE_BASE + '/favicon.ico" sizes="48x48 32x32 16x16">' +
+      '<link rel="icon" href="' + SITE_BASE + '/favicon.svg" type="image/svg+xml">' +
+      '<link rel="icon" type="image/png" sizes="32x32" href="' + SITE_BASE + '/favicon-32x32.png">' +
+      '<link rel="apple-touch-icon" href="' + SITE_BASE + '/apple-touch-icon.png">' +
       '<link rel="stylesheet" href="' + SITE_BASE + '/styles.css">');
   </script>
   <noscript>
+    <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="/styles.css">
   </noscript>
 </head>
