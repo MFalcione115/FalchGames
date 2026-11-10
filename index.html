@@ -67,9 +67,35 @@
           <p class="hero__mail">Questions? Write to <a href="mailto:support@falchgames.com">support@falchgames.com</a></p>
         </div>
 
-        <figure class="hero__devices">
-<!--devices:start--><div class="devs" style="grid-template-columns:71.5fr 177.5fr 164.9fr"><figure class="dev dev--iphone" style="--w:71.5;--h:149.6"><div class="dev__body"><div class="dev__screen"><span class="dev__brand" aria-hidden="true"><span class="mark" aria-hidden="true"><i class="mark__l"></i><i class="mark__seam"></i><i class="mark__r"></i></span></span><i class="dev__island" aria-hidden="true"></i></div></div><figcaption>iPhone</figcaption></figure><figure class="dev dev--ipad" style="--w:177.5;--h:249.7"><div class="dev__body"><div class="dev__screen"><span class="dev__brand" aria-hidden="true"><span class="mark" aria-hidden="true"><i class="mark__l"></i><i class="mark__seam"></i><i class="mark__r"></i></span></span></div></div><figcaption>iPad</figcaption></figure><figure class="dev dev--duo-unfolded" style="--w:164.9;--h:118.0"><div class="dev__body"><div class="dev__screen"><img class="px" src="hatch-unfolded.png" alt="Hatch &amp; Smash on the unfolded iPhone Duo inner display." decoding="async"><i class="dev__crease" aria-hidden="true"></i></div></div><figcaption>iPhone Duo, unfolded</figcaption></figure></div><!--devices:end-->
+        <!--duo:start-->
+<figure class="hero__demo">
+          <div class="duo" id="duo" data-state="unfolded" data-games="[{&quot;id&quot;:&quot;hatch-and-smash&quot;,&quot;name&quot;:&quot;Hatch &amp; Smash&quot;,&quot;unfolded&quot;:&quot;hatch-unfolded.png&quot;,&quot;folded&quot;:&quot;hatch-folded.png&quot;,&quot;px&quot;:true},{&quot;id&quot;:&quot;cold-case&quot;,&quot;name&quot;:&quot;Cold Case&quot;,&quot;unfolded&quot;:&quot;shots/cold-case-duo-unfolded.png&quot;,&quot;folded&quot;:&quot;shots/cold-case-duo-folded.png&quot;,&quot;px&quot;:true},{&quot;id&quot;:&quot;gamefold&quot;,&quot;name&quot;:&quot;GameFold&quot;,&quot;unfolded&quot;:&quot;shots/gamefold-duo-unfolded.png&quot;,&quot;folded&quot;:&quot;shots/gamefold-duo-folded.png&quot;,&quot;px&quot;:true},{&quot;id&quot;:&quot;void-chain&quot;,&quot;name&quot;:&quot;Void Chain&quot;,&quot;unfolded&quot;:&quot;shots/void-chain-duo-unfolded.jpg&quot;,&quot;folded&quot;:&quot;shots/void-chain-duo-folded.jpg&quot;,&quot;px&quot;:false},{&quot;id&quot;:&quot;wavefold&quot;,&quot;name&quot;:&quot;Wavefold&quot;,&quot;unfolded&quot;:&quot;shots/wavefold-duo-unfolded.jpg&quot;,&quot;folded&quot;:&quot;shots/wavefold-duo-folded.jpg&quot;,&quot;px&quot;:false}]" data-px="1" data-px-cover="1" style="--inner:url('hatch-unfolded.png');--cover:url('hatch-folded.png')" role="img" aria-label="An iPhone Duo that folds and unfolds by itself while it shows each Falch Games title in turn.">
+            <div class="duo__stage">
+              <div class="duo__tilt">
+                <div class="duo__half duo__half--left">
+                  <i class="duo__slab" style="--i:1"></i><i class="duo__slab" style="--i:2"></i><i class="duo__slab" style="--i:3"></i><i class="duo__slab" style="--i:4"></i><i class="duo__slab" style="--i:5"></i><i class="duo__slab" style="--i:6"></i>
+                  <div class="duo__screen duo__screen--left"></div>
+                  <div class="duo__cover"></div>
+                </div>
+                <div class="duo__half duo__half--right">
+                  <i class="duo__slab" style="--i:1"></i><i class="duo__slab" style="--i:2"></i><i class="duo__slab" style="--i:3"></i><i class="duo__slab" style="--i:4"></i><i class="duo__slab" style="--i:5"></i><i class="duo__slab" style="--i:6"></i>
+                  <div class="duo__screen duo__screen--right"></div>
+                  <div class="duo__shade"></div>
+                  <div class="duo__cast"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption class="demo__bar">
+            <div class="seg" role="group" aria-label="Show the phone folded or unfolded">
+              <button type="button" class="seg__btn" data-set="folded" aria-pressed="false">Folded</button>
+              <button type="button" class="seg__btn" data-set="unfolded" aria-pressed="true">Unfolded</button>
+            </div>
+            <div class="seg"><button type="button" class="seg__btn" id="duo-pause" aria-pressed="false">Pause</button></div>
+            <p class="demo__text" id="duo-caption"><a href="game-hatch-and-smash">Hatch &amp; Smash</a>, unfolded: the inner display.</p>
+          </figcaption>
         </figure>
+<!--duo:end-->
       </div>
     </section>
 
@@ -150,42 +176,6 @@
           <article class="pillar"><h3>iPad</h3><p>More room. A larger display shows more of the game at once, with layouts built for the bigger screen.</p></article>
           <article class="pillar"><h3>iPhone Duo</h3><p>Two displays. A quick layout on the cover screen, and a large two-panel canvas when you open it.</p></article>
         </div>
-      </div>
-    </section>
-
-    <section class="band band--hero" aria-labelledby="duo-title">
-      <div class="wrap hero hero--duo">
-        <div class="hero__copy">
-          <h2 id="duo-title">And the iPhone Duo's fold</h2>
-          <p class="lede">Apple's foldable has a small cover display and a large inner one. Where a game can use both, it plays one way closed and another way open. Here it is with Hatch &amp; Smash.</p>
-        </div>
-
-        <figure class="hero__demo">
-          <div class="duo" id="duo" data-state="unfolded">
-            <div class="duo__stage">
-              <div class="duo__tilt">
-              <div class="duo__half duo__half--left">
-                <i class="duo__slab" style="--i:1"></i><i class="duo__slab" style="--i:2"></i><i class="duo__slab" style="--i:3"></i><i class="duo__slab" style="--i:4"></i><i class="duo__slab" style="--i:5"></i><i class="duo__slab" style="--i:6"></i>
-                <div class="duo__screen duo__screen--left"></div>
-                <div class="duo__cover" role="img" aria-label="Hatch & Smash on the folded cover screen: a green serpent kaiju in a Japanese-style room."></div>
-              </div>
-              <div class="duo__half duo__half--right">
-                <i class="duo__slab" style="--i:1"></i><i class="duo__slab" style="--i:2"></i><i class="duo__slab" style="--i:3"></i><i class="duo__slab" style="--i:4"></i><i class="duo__slab" style="--i:5"></i><i class="duo__slab" style="--i:6"></i>
-                <div class="duo__screen duo__screen--right" role="img" aria-label="Hatch & Smash on the unfolded display: a giant armored kaiju smashing through a city at dusk."></div>
-                <div class="duo__shade"></div>
-                <div class="duo__cast"></div>
-              </div>
-              </div>
-            </div>
-          </div>
-          <figcaption class="demo__bar">
-            <div class="seg" role="group" aria-label="Show the phone folded or unfolded">
-              <button type="button" class="seg__btn" data-set="folded" aria-pressed="false">Folded</button>
-              <button type="button" class="seg__btn" data-set="unfolded" aria-pressed="true">Unfolded</button>
-            </div>
-            <p class="demo__text" id="duo-caption" aria-live="polite">Hatch &amp; Smash, unfolded. Your kaiju takes on a whole city.</p>
-          </figcaption>
-        </figure>
       </div>
     </section>
 

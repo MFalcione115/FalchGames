@@ -112,7 +112,7 @@ window.GAMES = [
     size: "third",
     media: { src: "hatch-unfolded.png", alt: "A giant armored kaiju, Ferrox, smashing through an isometric city at dusk in Hatch & Smash.", pixel: true },
     summary:
-      "A pixel-art kaiju collector. Hatch monsters from eggs and build up an idle lab on the folded screen, then unfold the phone, or tap SMASH, to send a kaiju through a city and flatten as much of it as it can.",
+      "A pixel-art kaiju collector. Hatch monsters from eggs and build up an idle lab on the folded screen, then unfold the phone, or tap SMASH, to send a kaiju through a city and flatten as much of it as it can. Designed for the iPhone Duo, and it also runs on iPhone and iPad.",
     features: [
       "Free to download. Paid items never gate core progress.",
       "Being away never removes coins, levels or kaiju. Your kaiju just gets lonely.",
@@ -141,7 +141,7 @@ window.GAMES = [
     platforms: "iPhone Duo, iPhone, iPad",
     size: "third",
     summary:
-      "A detective roguelike where every case is procedurally generated. Work through evidence minigames to build your case, then face an interrogation boss round to close it.",
+      "A detective roguelike where every case is procedurally generated. Work through evidence minigames to build your case, then face an interrogation boss round to close it. Designed for the iPhone Duo, and it also runs on iPhone and iPad.",
     features: [
       "Procedurally generated cases.",
       "Evidence minigames.",
@@ -162,7 +162,7 @@ window.GAMES = [
     platforms: "iPhone Duo",
     size: "third",
     summary:
-      "A collection of eighteen classic games for the iPhone Duo: six board games, six card games and six casino-style games. Play alone against the computer on the cover display, or open the phone and share the inner display with a second player. Because the casino games simulate gambling, GameFold is expected to be rated 18+.",
+      "A collection of eighteen classic games for the iPhone Duo: six board games, six card games and six casino-style games. Play alone against the computer on the cover display, or open the phone and share the inner display with a second player. Because the casino games simulate gambling, GameFold is expected to be rated 18+. It is made for the iPhone Duo only.",
     features: [
       "Board: chess, checkers, go, backgammon, nine men's morris and mancala.",
       "Cards: gin rummy, cribbage, war, solitaire, hearts and euchre.",
@@ -187,7 +187,7 @@ window.GAMES = [
     platforms: "iPhone Duo, iPhone, iPad",
     size: "half",
     summary:
-      "A chain of planets spirals toward a black hole, and you are the last probe in orbit. Fire planets into the chain, match three or more, and clear it before the void feeds. Every run is built from the relics you find along the way.",
+      "A chain of planets spirals toward a black hole, and you are the last probe in orbit. Fire planets into the chain, match three or more, and clear it before the void feeds. Every run is built from the relics you find along the way. Designed for the iPhone Duo, and it also runs on iPhone and iPad.",
     features: [
       "A roguelike run across eight sectors, from Mercury to Neptune, with boss fights on the way.",
       "Relics that change the rules: 33 of them, many built to work together.",
@@ -213,7 +213,7 @@ window.GAMES = [
     platforms: "iPhone Duo, iPhone, iPad",
     size: "half",
     summary:
-      "A synthesizer for iPhone, iPad and the iPhone Duo that is fun to jam on and deep enough for producers. It has its own audio engine, a piano roll, a MIDI looper and a set of effects.",
+      "A synthesizer for iPhone, iPad and the iPhone Duo that is fun to jam on and deep enough for producers. It has its own audio engine, a piano roll, a MIDI looper and a set of effects. It is made for the iPhone Duo's two displays, and it also runs on iPhone and iPad.",
     features: [
       "A piano roll with recording and a MIDI looper.",
       "An arpeggiator, delay and reverb, with a bitcrusher and flanger available in Pro.",
