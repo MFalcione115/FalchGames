@@ -154,6 +154,7 @@ window.GAMES = [
     color: "#ff6a2b",
     accent: "#b8400f",
     shape: "diamonds",
+    pixelArt: true,
     name: "GameFold",
     tagline: "Eighteen classic games for one foldable.",
     status: "development",
