@@ -26,9 +26,6 @@ window.SITE = {
   email: "support@falchgames.com",
   domain: "falchgames.com",
   year: 2026,
-  // Newsletter: paste a form endpoint (Buttondown, Formspree, Mailchimp...) to collect
-  // sign-ups for real. Leave empty and the form opens an email to you instead.
-  newsletterAction: "",
   // Social links appear in the footer and press kit once you add a url.
   social: [
     // { label: "YouTube", url: "https://youtube.com/@falchgames" },

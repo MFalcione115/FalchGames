@@ -249,7 +249,6 @@ p { margin: 0 0 1em; }
 .contact h3 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
 .contact p { max-width: 30em; color: var(--muted); margin: 0 0 6px; }
 .contact a:not(.btn) { color: var(--link); }
-.launch__addr { font-size: .93rem; margin: 14px 0 0 !important; }
 
 /* ---------- footer ---------- */
 .foot { padding: 0 0 clamp(18px, 3vw, 32px); color: var(--muted); }
