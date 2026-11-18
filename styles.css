@@ -523,3 +523,8 @@ p { margin: 0 0 1em; }
 @media (max-width: 600px) { .card--half { grid-column: span 12; } }
 
 .doc h3 { font-size: 1.05rem; letter-spacing: -.01em; margin: 1.5em 0 .3em; }
+
+/* Game page FAQ */
+.gp__faq h3 { font-size: 1.02rem; letter-spacing: -.01em; margin: 1.3em 0 .25em; }
+.gp__faq h2 + h3 { margin-top: .6em; }
+.gp__faq p { margin: 0; }

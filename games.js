@@ -92,14 +92,22 @@ window.STUDIO = {
 window.GAMES = [
   {
     id: "hatch-and-smash",
-    released: "2026-11-16",   // write it as YYYY-MM-DD, e.g. "2026-11-12". Leave empty until it has a date: the page says "To be announced".
+    released: "2026-11-17",   // write it as YYYY-MM-DD, e.g. "2026-11-12". Leave empty until it has a date: the page says "To be announced".
     appStore: "https://apps.apple.com/us/app/hatch-smash/id6833575147",   // the App Store link. Leave empty until the game is live: the page says "Coming to the App Store".
     updates: [
-      { date: "2026-11-16", title: "Now on the App Store", body: "Hatch & Smash is available to download on the App Store in the United States." },
+      { date: "2026-11-17", title: "Now on the App Store", body: "Hatch & Smash is available to download on the App Store in the United States." },
       { date: "2026-10-16", title: "Daily missions", body: "Three missions a day, one each for destroying, skill and combat, drawn from a pool of 28. Finish them for rewards, and a fresh set arrives the next day." },
       { date: "2026-10-14", title: "Ten kaiju at launch", body: "The launch roster is ten kaiju, all of them hatching from eggs, each with its own moves and forms." },
       { date: "2026-10-13", title: "Three cities to smash", body: "Downtown, the snowy Frostmoor and the desert Sunscar Basin. Only Downtown is open at first, and beating a city's boss opens the next." },
       { date: "2026-10-10", title: "Feeding and cleaning are gone", body: "There's no hunger, cleaning or starving in Hatch & Smash. Your kaiju simply looks a bit sadder the longer you're away, and a single visit cheers it up. Nothing you've earned is ever taken back." },
+    ],
+    faq: [
+      ["What is Hatch & Smash?", "A free pixel-art Kaiju game with two modes. In Hatch mode you hatch eggs, tap for coins and raise a monster. In Smash mode you send it rampaging through an isometric city against a 60-second clock."],
+      ["What devices does it run on?", "iPhone and iPad. On an iPhone Duo or other foldable iPhone, folding gives you Hatch and unfolding starts Smash. On other devices, portrait is Hatch and landscape is Smash."],
+      ["Is it free? Do I have to watch ads?", "It is free to download and play, and nothing you can buy is required to progress. Ads are optional rewarded videos, and declining never takes anything away."],
+      ["What happens while I'm away?", "Your contracts keep earning coins up to your vault's limit, which you can upgrade. Your Kaiju may look sad, but that never costs you coins, XP, levels or Kaiju."],
+      ["How do I restore purchases or move to a new phone?", "Open SYS > SETTINGS > HELP and tap RESTORE PURCHASES. If iCloud backup is on, the game offers to restore your progress on a new device."],
+      ["How do I get help?", "Email support@falchgames.com with your device, iOS version and what happened."],
     ],
     color: "#f5b921",
     accent: "#8a5a00",
