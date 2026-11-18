@@ -34,6 +34,7 @@ window.SITE = {
 };
 
 window.STATUS = {
+  live: { label: "On the App Store", tone: "accent" },
   development: { label: "In development", tone: "accent" },
   prototype: { label: "Early prototype", tone: "warm" },
 };
@@ -91,9 +92,10 @@ window.STUDIO = {
 window.GAMES = [
   {
     id: "hatch-and-smash",
-    released: "",   // write it as YYYY-MM-DD, e.g. "2026-11-12". Leave empty until it has a date: the page says "To be announced".
-    appStore: "",   // the App Store link. Leave empty until the game is live: the page says "Coming to the App Store".
+    released: "2026-11-16",   // write it as YYYY-MM-DD, e.g. "2026-11-12". Leave empty until it has a date: the page says "To be announced".
+    appStore: "https://apps.apple.com/us/app/hatch-smash/id6833575147",   // the App Store link. Leave empty until the game is live: the page says "Coming to the App Store".
     updates: [
+      { date: "2026-11-16", title: "Now on the App Store", body: "Hatch & Smash is available to download on the App Store in the United States." },
       { date: "2026-10-16", title: "Daily missions", body: "Three missions a day, one each for destroying, skill and combat, drawn from a pool of 28. Finish them for rewards, and a fresh set arrives the next day." },
       { date: "2026-10-14", title: "Ten kaiju at launch", body: "The launch roster is ten kaiju, all of them hatching from eggs, each with its own moves and forms." },
       { date: "2026-10-13", title: "Three cities to smash", body: "Downtown, the snowy Frostmoor and the desert Sunscar Basin. Only Downtown is open at first, and beating a city's boss opens the next." },
@@ -104,7 +106,7 @@ window.GAMES = [
     gallery: { folded: "hatch-folded.png", unfolded: "hatch-unfolded.png" },
     name: "Hatch & Smash",
     tagline: "Raise a kaiju folded. Wreck a city unfolded.",
-    status: "development",
+    status: "live",
     genre: "Kaiju collector and idle lab",
     platforms: "iPhone Duo, iPhone, iPad",
     size: "third",
@@ -232,17 +234,19 @@ window.GAMES = [
 */
 window.PRIVACY = {
   "hatch-and-smash": {
+    updated: "November 18, 2026",
+    note: "Hatch & Smash is available on the App Store in the United States.",
     short: "Hatch & Smash has no account system and no servers of ours, and we do not sell your data. The only third party that collects data for its own purposes is Google AdMob, which runs the optional rewarded videos.",
     sections: [
       { h: "What stays on your device", p: ["Your game progress (coins, gems, Kaiju, eggs, missions, settings and purchase records) is saved on your device. We never receive it."] },
       { h: "iCloud backup", p: ["If you are signed in to iCloud and leave iCloud backup switched on in the game, a compact copy of your progress is stored in your own iCloud account using Apple's iCloud key-value storage, so you can restore it on a new device. We cannot see or access it. You can turn it off in the game's settings and delete it in iOS Settings under your name, iCloud, Manage Storage."] },
       { h: "Game Center", p: ["If you are signed in to Game Center, the game submits your scores and statistics to Apple's Game Center leaderboards and shows your Game Center alias and avatar in the game. This is handled by Apple under Apple's privacy policy, and we do not receive your name or contact details. You can sign out of Game Center in iOS Settings."] },
-      { h: "Purchases", p: ["Gems, a starter bundle, an Auto-Tapper and a season pass can be bought through the App Store. Apple processes the payment and we never see your card or Apple Account details. The game receives a verified record that a purchase was made so it can deliver your items. The odds of random eggs are shown before you buy."] },
+      { h: "Purchases", p: ["Gems, a starter bundle and an Auto-Tapper can be bought through the App Store. Apple processes the payment and we never see your card or Apple Account details. The game receives a verified record that a purchase was made so it can deliver your items. The odds of random eggs are shown before you buy."] },
       { h: "Notifications", p: ["The game can send local notifications, for example when an egg is ready or your energy is full. They are scheduled on your device, not sent from a server, and you can turn them off in the game or in iOS Settings."] },
       { h: "Advertising (Google AdMob)", p: [
         "The game offers optional rewarded videos, shown only when you choose to watch one. They are provided by Google AdMob. When ads are loaded or shown, Google and its partners may collect and use data such as your device's advertising identifier (only if you allow tracking), IP address, approximate location, device and app information, ad interactions and diagnostics, to deliver, measure and personalise ads and to prevent fraud. This can include tracking across apps and websites owned by other companies.",
         "Where Google requires it, the game shows Google's consent form before any ads are used, and you can change your choice in the game's ad privacy choices. On iOS you are asked whether the app may track you. If you say no, ads can still appear but are less personalised, and the game plays and rewards exactly the same. You can change this in iOS Settings under Privacy & Security, Tracking."] },
-      { h: "Where the game is available", p: ["Hatch & Smash is planned for release in the United States only, and this policy is written for US law."] },
+      { h: "Where the game is available", p: ["Hatch & Smash is available in the United States only, and this policy is written for US law."] },
       { h: "How long we keep data", p: ["We do not keep data about you. Data on your device stays until you delete the game. iCloud backups stay until you delete them in iOS Settings. Apple and Google keep the data they handle under their own policies."] },
       { h: "Children", p: ["Hatch & Smash is not directed at children under 13, and we do not knowingly collect personal information from them."] },
     ],
