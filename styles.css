@@ -528,3 +528,10 @@ p { margin: 0 0 1em; }
 .gp__faq h3 { font-size: 1.02rem; letter-spacing: -.01em; margin: 1.3em 0 .25em; }
 .gp__faq h2 + h3 { margin-top: .6em; }
 .gp__faq p { margin: 0; }
+
+/* Upcoming-version screenshot strip */
+.gp__shots { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; list-style: none; margin: 1.4em 0 0; padding: 0 0 12px; }
+.gp__shots li { flex: 0 0 auto; scroll-snap-align: start; }
+.gp__shots img { display: block; height: clamp(240px, 52vw, 420px); width: auto; max-width: none; border-radius: 14px; }
+.gp { grid-template-columns: minmax(0, 1fr); }
+.gp__card .gp__shots { margin-bottom: 0; }
