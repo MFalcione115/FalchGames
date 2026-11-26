@@ -35,6 +35,7 @@ window.SITE = {
 
 window.STATUS = {
   live: { label: "On the App Store", tone: "accent" },
+  soon: { label: "Coming soon", tone: "warm" },
   development: { label: "In development", tone: "accent" },
   prototype: { label: "Early prototype", tone: "warm" },
 };
@@ -54,7 +55,7 @@ window.STUDIO = {
   ],
   background: [
     "Falcione Productions, LLC is a limited liability company registered in the Commonwealth of Pennsylvania. It owns and operates this website and publishes games under the Falch Games name.",
-    "The studio is currently developing five titles: Hatch & Smash, a kaiju collector; Cold Case, a detective roguelike; GameFold, a collection of eighteen classic board, card and casino games; Void Chain, a roguelike marble shooter; and Wavefold, a synthesizer. Each title's page lists the devices it supports and what stage it has reached.",
+    "The studio is working on six titles: Hatch & Smash, a kaiju collector; Dungeon Crawler, a first-person pixel roguelike; Cold Case, a detective roguelike; GameFold, a collection of eighteen classic board, card and casino games; Void Chain, a roguelike marble shooter; and Wavefold, a synthesizer. Each title's page lists the devices it supports and what stage it has reached.",
   ],
   organization: {
     intro: "The company is small and its structure is simple, so it is clear who is responsible for what.",
@@ -171,6 +172,39 @@ window.GAMES = [
     unfolded: "Smash mode: send your Kaiju through a city against the clock.",
   },
   {
+    id: "dungeon-crawler",
+    path: "dungeon-crawler",   // this game has its own pages at /dungeon-crawler/ (see tools/dungeon_crawler.py)
+    released: "", updates: [],
+    appStore: "",   // paste the App Store link here once the game is live
+    // News for /dungeon-crawler/updates, newest first. To add one, copy a block to the top of this list.
+    posts: [
+      {
+        label: "1.0, at launch",
+        title: "The whole dungeon",
+        body: [
+          "Five acts, with Vorrakesh the Eclipse King at the end of them.",
+          "Six heroes, the camp and its expeditions, and travellers who come to trade.",
+          "And an ending that hints at what comes next: a red planet drifting toward the Earth.",
+        ],
+      },
+    ],
+    later: ["The game coming to more devices."],
+    color: "#c8921f",
+    accent: "#7a0f22",
+    shape: "diamonds",
+    media: { src: "media/dungeon-crawler/card.webp", alt: "Dungeon Crawler: the title over the Eclipse King's hall.", pixel: true },
+    name: "Dungeon Crawler",
+    storeName: "Dungeon Crawler: Offline RPG",
+    tagline: "Swipe Combat Pixel Roguelike",
+    status: "soon",
+    genre: "First-person pixel roguelike",
+    platforms: "iPhone Duo, iPhone, iPad",
+    size: "third",
+    summary:
+      "A retro first-person dungeon crawler with fast swipe combat. The Eclipse King has bound the moon before the sun, and six heroes go down into his dungeon to end it. Free, with ads, and it plays offline. Made for the iPhone Duo, where you unfold to fight and fold to rest at camp, and it also runs on iPhone and iPad.",
+    features: [],
+  },
+  {
     id: "cold-case",
     pixelArt: true,
     released: "", appStore: "", updates: [
@@ -232,7 +266,7 @@ window.GAMES = [
     status: "development",
     genre: "Roguelike marble shooter",
     platforms: "iPhone Duo, iPhone",
-    size: "half",
+    size: "third",
     summary:
       "A chain of planets spirals toward a black hole, and you are the last probe in orbit. Fire planets into the chain, match three or more, and clear it before the void feeds. Every run is built from the relics you find along the way. Designed for the iPhone Duo, and it also runs on iPhone.",
     features: [
@@ -258,7 +292,7 @@ window.GAMES = [
     status: "development",
     genre: "Synthesizer and music app",
     platforms: "iPhone Duo, iPhone, iPad",
-    size: "half",
+    size: "third",
     summary:
       "A synthesizer for iPhone, iPad and the iPhone Duo that is fun to jam on and deep enough for producers. It has its own audio engine, a piano roll, a MIDI looper and a set of effects. It is made for the iPhone Duo's two displays, and it also runs on iPhone and iPad.",
     features: [

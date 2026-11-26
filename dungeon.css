@@ -1,0 +1,56 @@
+/* Dungeon Crawler pages: dark stone, deep crimson and gold, blocky headings. Always dark. Loaded after styles.css. */
+html:has(body.dc) { background: #0e090b; color-scheme: dark; }
+body.dc {
+  --bg: #0e090b; --bg-2: #181013; --ink: #f4e9d6; --muted: rgba(244, 233, 214, .84); --faint: rgba(244, 233, 214, .72);
+  --link: #f0c255; --glass: rgba(34, 22, 26, .9); --glass-hi: rgba(120, 26, 40, .55); --edge: rgba(224, 172, 62, .5);
+  --edge-soft: rgba(224, 172, 62, .2); --shine: rgba(224, 172, 62, .25); --btn-bg: #e0ac3e; --btn-ink: #1b0b0e;
+  --line: rgba(224, 172, 62, .22); --gold: #e0ac3e; --crimson: #7a0f22;
+  color: var(--ink);
+  background-color: #0e090b;
+  background-image:
+    linear-gradient(180deg, rgba(122, 15, 34, .28), transparent 520px),
+    repeating-linear-gradient(0deg, transparent 0 46px, rgba(255, 255, 255, .035) 46px 48px),
+    repeating-linear-gradient(90deg, transparent 0 94px, rgba(0, 0, 0, .35) 94px 96px);
+}
+body.dc::before, body.dc::after { display: none; }
+.dc .top, .dc .top__mail, .dc .nav a, .dc .badge { border-radius: 6px; }
+.dc .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.dc__page { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 18px clamp(40px, 6vw, 80px); }
+.dc__page p { margin: 0 0 .9em; color: var(--muted); max-width: 48em; }
+.dc__page p:last-child { margin-bottom: 0; }
+.dc__page h2:not(.px) { font-size: 1.15rem; margin: 1.5em 0 .4em; color: var(--gold); }
+.dc__page h3 { font-size: 1.02rem; margin: 1.3em 0 .45em; color: var(--ink); }
+.dc__box { background: var(--glass); border: 2px solid var(--edge-soft); border-radius: 6px; box-shadow: inset 0 0 0 2px rgba(0, 0, 0, .5); padding: clamp(18px, 3.2vw, 36px); }
+.dc__list { margin: 0 0 1em; padding-left: 1.2em; color: var(--muted); max-width: 48em; }
+.dc__list li { margin-bottom: .35em; }
+.dc__list li::marker { content: "\25A0  "; color: var(--gold); font-size: .7em; }
+
+.px { display: flex; flex-wrap: wrap; gap: .45em .6em; margin: 0 0 .8em; line-height: 1; font-size: clamp(17px, 2.6vw, 24px); }
+h1.px { font-size: clamp(26px, 5vw, 44px); margin-top: .4em; }
+.px svg { display: block; height: 1em; max-width: 100%; overflow: visible; fill: var(--gold); shape-rendering: crispEdges; filter: drop-shadow(0 .14em 0 var(--crimson)); }
+
+.dc__tabs { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 18px; }
+.dc__tabs a { padding: 10px 14px; border: 2px solid var(--edge-soft); border-radius: 4px; background: var(--glass); color: var(--ink); text-decoration: none; font-weight: 600; font-size: .92rem; }
+.dc__tabs a[aria-current="page"] { background: var(--crimson); border-color: var(--gold); }
+
+.dc__hero { display: grid; justify-items: center; gap: 12px; text-align: center; }
+.dc__hero img { display: block; width: 100%; height: auto; border: 3px solid var(--gold); border-radius: 4px; }
+.dc__hero .badges { justify-content: center; }
+.dc__sub { font-size: 1.15rem; font-weight: 700; color: var(--ink) !important; }
+.dc__price { font-size: .95rem; }
+.dc__btn, .dc__soon { display: inline-block; padding: 13px 22px; border-radius: 4px; font-weight: 800; text-decoration: none; }
+.dc__btn { background: var(--gold); color: #1b0b0e; border: 2px solid var(--gold); box-shadow: 0 4px 0 var(--crimson); }
+.dc__btn--line { background: transparent; color: var(--ink); }
+.dc__page .dc__soon { margin: 0; border: 2px dashed var(--gold); color: var(--gold); }
+.dc__more { display: flex; flex-wrap: wrap; gap: 12px; }
+.dc__label { color: var(--gold) !important; font-weight: 700; font-size: .9rem; }
+
+.dc__shots { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; list-style: none; margin: 0; padding: 0 0 12px; }
+.dc__shots li { flex: 0 0 auto; scroll-snap-align: start; max-width: 100%; }
+.dc__shots img { display: block; height: clamp(220px, 44vw, 380px); width: auto; max-width: none; border: 2px solid var(--edge-soft); border-radius: 4px; }
+@media (max-width: 700px) { .dc__shots img { height: auto; max-height: 360px; width: auto; max-width: 78vw; } }
+
+.dc__foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+.dc__foot a { margin-left: 12px; }
+.dc__foot p { margin: 0; }
