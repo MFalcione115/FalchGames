@@ -194,14 +194,14 @@ window.GAMES = [
     shape: "diamonds",
     media: { src: "media/dungeon-crawler/card.webp", alt: "Dungeon Crawler: the title over the Eclipse King's hall.", pixel: true },
     name: "Dungeon Crawler",
-    storeName: "Dungeon Crawler: Offline RPG",
+    storeName: "Dungeon Crawler",
     tagline: "Swipe Combat Pixel Roguelike",
     status: "soon",
     genre: "First-person pixel roguelike",
     platforms: "iPhone Duo, iPhone, iPad",
     size: "third",
     summary:
-      "A retro first-person dungeon crawler with fast swipe combat. The Eclipse King has bound the moon before the sun, and six heroes go down into his dungeon to end it. Free, with ads, and it plays offline. Made for the iPhone Duo, where you unfold to fight and fold to rest at camp, and it also runs on iPhone and iPad.",
+      "A retro first-person dungeon crawler with fast swipe combat. The Eclipse King has bound the moon before the sun, and six heroes go down into his dungeon to end it. Free, with ads. Made for the iPhone Duo, where you unfold to fight and fold to rest at camp, and it also runs on iPhone and iPad.",
     features: [],
   },
   {
